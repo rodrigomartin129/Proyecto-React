@@ -18,7 +18,7 @@ const NavBar = () => {
                 </li>
             </ul>
             <div id="CartWidget">
-                <CartWidget/>
+                <CartWidget />
             </div>
         </nav>
     )
