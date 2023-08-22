@@ -1,0 +1,25 @@
+h2 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(70, 250, 50);
+    border-radius: 10px ;
+}
+
+#CartWidget {
+    text-align: center;
+}
