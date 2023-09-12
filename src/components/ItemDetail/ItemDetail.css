@@ -1,0 +1,17 @@
+.contenedorItemDetail {
+    padding: 10px;
+    text-align: center;
+}
+
+.detalle {
+    margin: 50px;
+}
+
+.precio {
+    margin: 40px;
+}
+
+.imgItemDetail {
+    height: 650px;
+    object-fit: contain;
+}

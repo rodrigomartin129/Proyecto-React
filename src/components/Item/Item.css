@@ -1,0 +1,16 @@
+.cardItem {
+    background-color: #bbe6ad;
+    padding: 1rem;
+    margin: 1rem;
+    width: 18rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgItem {
+    width: 150px;
+    object-fit: contain;
+}
+

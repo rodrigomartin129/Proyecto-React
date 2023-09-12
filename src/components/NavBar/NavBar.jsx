@@ -6,25 +6,25 @@ const NavBar = () => {
     return (
         <header>
             <Link to="/">
-                <h2>Vivero Green Life</h2>
+                <h1>Vivero Green Life</h1>
             </Link>
             
             <nav> 
                 <ul>
                     <li>
-                        <NavLink to="/categoria/1"> Suculentas </NavLink>
+                        <NavLink to="/categoria/Suculentas"> Suculentas </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/categoria/2"> Aromáticas </NavLink>
+                        <NavLink to="/categoria/Aromáticas"> Aromáticas </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/categoria/3"> Bulbosas </NavLink>
+                        <NavLink to="/categoria/Bulbosas"> Bulbosas </NavLink>
                     </li>
                 </ul>
-                <div id="CartWidget">
-                    <CartWidget />
-                </div>
             </nav>
+                
+            <CartWidget />
+                
         </header>
     )
 }

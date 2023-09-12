@@ -4,9 +4,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
-// import ItemDetail from "./components/ItemDetail/ItemDetail";
-
-
 function App() {
   return (
     <>
@@ -16,7 +13,7 @@ function App() {
         <Route path="/" element={ <ItemListContainer/> }/>  
         <Route path="/categoria/:idCategoria" element={ <ItemListContainer/> }/>  
         <Route path="/item/:idItem" element={ <ItemDetailContainer/> } />  
-        <Route path="*" element={<h2>Error en acceso, vuelva a la página anterior</h2>}/>  
+        <Route path="*" element={<h2>404 NOT FOUND</h2>}/>  
       </Routes>
       </BrowserRouter>
 

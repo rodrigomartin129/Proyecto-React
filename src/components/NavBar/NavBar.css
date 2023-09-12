@@ -1,5 +1,8 @@
-h2 {
-    text-align: center;
+header {
+    border-bottom: 2px solid black;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
 }
 
 ul {
@@ -9,14 +12,15 @@ ul {
 
 li {
     display: inline-block;
+    margin: 0.75rem;
 }
 
 a {
     text-transform: capitalize;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
-    background-color: rgb(70, 250, 50);
+    background-color: rgb(22, 255, 185);
     border-radius: 10px ; 
 }
 
