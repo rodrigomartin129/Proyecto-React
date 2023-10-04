@@ -11,7 +11,7 @@ export const CartProvider = ({children}) => {
     const [total, setTotal] = useState (0);
     const [articulosTotales, setArticulosTotales] = useState (0);
 
-    console.log(cart);
+    // console.log(cart);
 
     const addItem = (item, cantidad) => {
         const itemExistente = cart.find(prod => prod.item.id === item.id);

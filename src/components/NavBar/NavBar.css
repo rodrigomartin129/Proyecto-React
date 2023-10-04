@@ -15,7 +15,7 @@ li {
     margin: 0.75rem;
 }
 
-a {
+nav a {
     text-transform: capitalize;
     text-decoration: none;
     padding: 10px;

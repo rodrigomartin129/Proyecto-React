@@ -11,3 +11,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tablaCart {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  justify-items: center; 
+}
+
+.tablaCart h4 {
+  font-size: 1.2rem;
+}
+
+.resumen {
+  text-align: center;
+}
+
+.resumen h2 {
+  padding: 10px;
+}
+
+a {
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px ;
+  font-size: 1.5rem; 
+}
+
+button {
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px ; 
+  font-size: 1.2rem; 
+}
+
+.resumen a{
+  background-color: aqua;
+}
+
+a h1{
+  background-color: rgb(29, 48, 10);
+  color: chartreuse;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 30px ;
+}

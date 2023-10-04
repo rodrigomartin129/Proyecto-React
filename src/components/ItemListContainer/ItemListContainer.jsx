@@ -1,21 +1,41 @@
 import { useState, useEffect } from 'react';
-import { getProductos, getProductosPorCategoria } from '../../asyncmock';
+// import { getProductos, getProductosPorCategoria } from '../../asyncmock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, where, query } from 'firebase/firestore';
+import { db } from "../../services/config";
 
 const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([]);
-
+    const [loading, setLoading] = useState(true);
     const {idCategoria} = useParams();
 
-    useEffect(() => {
+    useEffect( ()=> {
+        setLoading(true)
+        const misArticulos = idCategoria ? query(collection(db, "productos"), where("idCat", "==", idCategoria)) : collection(db, "productos");
 
-        const funcion = idCategoria ? getProductosPorCategoria : getProductos;
-        
-        funcion(idCategoria)
-            .then(respuesta => setProductos(respuesta))
+        getDocs(misArticulos)
+            .then(respuesta => {
+                const nuevosArticulos = respuesta.docs.map( doc => { 
+                    const data = doc.data()
+                    return { id: doc.id, ...data}
+                })
+                setProductos(nuevosArticulos);
+                setLoading(false)
+            })
             .catch(error => console.log(error))
     }, [idCategoria])
+
+    if(loading) return <h1>Loading...</h1>
+
+    // useEffect(() => {
+
+    //     const funcion = idCategoria ? getProductosPorCategoria : getProductos;
+        
+    //     funcion(idCategoria)
+    //         .then(respuesta => setProductos(respuesta))
+    //         .catch(error => console.log(error))
+    // }, [idCategoria])
 
     return (
         <div>
