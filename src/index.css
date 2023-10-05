@@ -45,6 +45,7 @@ button {
   text-decoration: none;
   padding: 10px;
   margin: 5px;
+  margin-top: 25px;
   border-radius: 10px ; 
   font-size: 1.2rem; 
 }
@@ -61,4 +62,28 @@ a h1{
   padding: 10px;
   margin: 5px;
   border-radius: 30px ;
+}
+
+.inputsFormulario{
+  font-size: 26px;
+  padding: 5px;
+}
+
+.inputsFormulario label{
+  padding-right: 10px;
+}
+
+.inputsFormulario input{
+  font-size: 26px;
+}
+
+.checkout {
+  text-align: center;
+}
+
+.itemCheckout {
+  padding: 5px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }

@@ -59,18 +59,25 @@ const Checkout = () => {
     }
     
     return (
-        <div>
-            <h2>Checkout</h2>
+        <div className='checkout'>
+            <h1>Presupuesto Final</h1>
+            <hr />
             <form onSubmit={handleForm}>
+                <div className='itemCheckout'>
+                    <h2>Cantidad</h2>
+                    <h2>Planta</h2>
+                    <h2>Precio Unitario</h2>
+                </div>
                 {
                     cart.map( prod => (
-                        <div key={prod.item.id}>
-                            <h3> {prod.item.articulo} x {prod.cantidad} </h3>
-                            <h3> {prod.item.precio} </h3>
-                            <hr />
+                        <div className='itemCheckout' key={prod.item.id}>
+                            <h3>  x {prod.cantidad} </h3>
+                            <h3> {prod.item.articulo} </h3>
+                            <h3> ${prod.item.precio} </h3>
                         </div>
                     ))                                        
                 }
+                <hr />
                 <h2> Total a pagar: ${total}</h2>
                 <h2> Estás por comprar {articulosTotales} articulos </h2>
                 <hr />
@@ -104,7 +111,7 @@ const Checkout = () => {
                     error && <p style={{fontWeight: 800, fontStyle:"italic", color:"red"}}> {error} </p> 
                 }
                 
-                <button type='submit'> Finalizar Compra </button>
+                <button type='submit'> Confirmar Compra </button>
 
             </form>
             {

@@ -14,3 +14,14 @@
     object-fit: contain;
 }
 
+.detalles {
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px ; 
+    border: solid 1px black;
+    font-size: 1.2rem; 
+    background-color: rgb(225, 225, 225);
+}
+
