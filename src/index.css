@@ -44,13 +44,16 @@ button {
   text-transform: capitalize;
   text-decoration: none;
   padding: 10px;
-  margin: 5px;
-  margin-top: 25px;
+  margin: 25px 5px;
   border-radius: 10px ; 
-  font-size: 1.2rem; 
+  font-size: 1.5rem; 
 }
 
 .resumen a{
+  background-color: aqua;
+}
+
+.contenedorItemDetail a{
   background-color: aqua;
 }
 
@@ -86,4 +89,8 @@ a h1{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
+}
+
+.confirmaOrden {
+  font-size: 30px;
 }

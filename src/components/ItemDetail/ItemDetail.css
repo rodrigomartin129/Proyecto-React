@@ -5,10 +5,12 @@
 
 .detalle {
     margin: 50px;
+    font-size: 20px;
 }
 
 .precio {
     margin: 40px;
+    font-size: 26px;
 }
 
 .imgItemDetail {

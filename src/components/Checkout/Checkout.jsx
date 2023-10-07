@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { db } from '../../services/config';      
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, updateDoc, doc, getDoc } from 'firebase/firestore';
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
@@ -32,11 +32,11 @@ const Checkout = () => {
                 id: prod.item.id,
                 articulo: prod.item.articulo,
                 cantidad: prod.cantidad,
-                precio: prod.precio // acá se lo agregué
+                precio: prod.item.precio 
             })),
             total: total,
-            fecha: new Date(), //serverTimestamp() ???
-            //estado? (generada por defecto)
+            fecha: new Date(),
+            estado: "generada",
             cliente: {
                 nombre,
                 apellido,
@@ -45,16 +45,30 @@ const Checkout = () => {
             }            
         };
 
-        // console.log(orden);
-
-        addDoc(collection(db, "ordenes"), orden)
-            .then(docRef => {
-                setOrdenId(docRef.id);
-                clear();
+        Promise.all(
+            orden.items.map(async (itemOrden) => {
+                const itemReferencia = doc(db, "productos", itemOrden.id);
+                const itemDoc =await getDoc(itemReferencia);
+                const stockActual = itemDoc.data().stock;
+                await updateDoc(itemReferencia, {
+                    stock: stockActual - itemOrden.cantidad,
+                })
+            })
+        )
+            .then (()=> {
+                addDoc(collection(db, "ordenes"), orden)
+                    .then(docRef => {
+                        setOrdenId(docRef.id);
+                        clear();
+                    })
+                    .catch(error => {
+                        console.log("Error cuando se crea la orden", error);
+                        setError("Error cuando se crea la orden")
+                    })
             })
             .catch(error => {
-                console.log("Error cuando se crea la orden", error);
-                setError("Error cuando se crea la orden")
+                console.log("No se puede actualizar el stock", error);
+                setError("No se puede actualizar el stock, intente comprar nuevamente más tarde")
             })
     }
     
@@ -115,7 +129,7 @@ const Checkout = () => {
 
             </form>
             {
-                ordenId && ( <strong>Gracias por tu compra. Tu número de orden es {ordenId} </strong> )
+                ordenId && ( <strong className='confirmaOrden'>Gracias por tu compra. Tu número de orden es {ordenId} </strong> )
             }
         </div>
     )

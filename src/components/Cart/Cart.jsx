@@ -30,6 +30,7 @@ const Cart = () => {
                 <h2> Monto Total: ${total} </h2>
                 <h2> Artículos Totales: {articulosTotales} </h2>
                 <Link to="/checkout"> Finalizar la Compra </Link>
+                <Link to="/"> Ver Artículos </Link>
             </div>
         </div>
     )

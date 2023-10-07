@@ -15,6 +15,7 @@ _Este proyecto es un ecommerce básico que presento como Proyecto Final del curs
 * Visualizar el detalle de cada artículo (foto, precio, descripción, selector de cantidad).
 * Agregar productos al carrito de compras.
 * Realizar una orden de compra. 
+* Al comprar, descuenta el stock en la base de datos de los artículos que se ordenaron.
 
 ## Instalación
 

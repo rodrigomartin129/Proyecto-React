@@ -11,8 +11,6 @@ export const CartProvider = ({children}) => {
     const [total, setTotal] = useState (0);
     const [articulosTotales, setArticulosTotales] = useState (0);
 
-    // console.log(cart);
-
     const addItem = (item, cantidad) => {
         const itemExistente = cart.find(prod => prod.item.id === item.id);
 
@@ -54,6 +52,5 @@ export const CartProvider = ({children}) => {
             {children}
         </CartContext.Provider>
     )
-
 }
 
